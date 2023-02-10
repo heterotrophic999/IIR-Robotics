@@ -1,5 +1,5 @@
 Team members:
-Taratutin Wladimir
+Taratutin Wladimir \n
 Pervyhin Danechka
 Vitalii Shevtsov
 Alyona Pozhidaeva
