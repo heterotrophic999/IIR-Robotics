@@ -248,8 +248,8 @@ int main(int argc, char **argv)
 
     while (ros::ok()){
         
-        if (flag == 1488)
-        straight_legs();
+        if (flag == 1488) sit_down();
+        else stand();
         lowState_pub.publish(lowState);
         sendServoCmd();
 

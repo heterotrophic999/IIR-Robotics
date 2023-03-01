@@ -21,7 +21,7 @@ extern unitree_legged_msgs::LowCmd lowCmd;
 extern unitree_legged_msgs::LowState lowState;
 
 void stand();
-void straight_legs();
+void sit_down();
 void motion_init();
 void sendServoCmd();
 void moveAllPosition(double* jointPositions, double duration);

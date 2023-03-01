@@ -43,10 +43,11 @@ void stand()
                       0.0, 0.67, -1.3, -0.0, 0.67, -1.3};
     moveAllPosition(pos, 2*1000);
 }
-void straight_legs()
+void sit_down()
 {   
-    double pos[12] = {0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 
-                      0.0, 0.0, 0.0, 0.0, 0.0, 0.0};
+    double d = 0.50;
+    double pos[12] = {0.0, 0.67, -1.3, -0.0, 0.67, -1.3, 
+                      0.0, (0.67+d), (-1.3-d), -0.0, (0.67+d), (-1.3-d)};
     moveAllPosition(pos, 2*1000);
 }
 void motion_init()
