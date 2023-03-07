@@ -20,11 +20,27 @@ def handler(event, context):
     :param context: information about current execution context.
     :return: response to be serialized as JSON.
     """
+    move = 0
     text = 'Hello! I\'ll repeat anything you say to me.'
     if 'request' in event and \
             'original_utterance' in event['request'] \
             and len(event['request']['original_utterance']) > 0:
         text = event['request']['original_utterance']
+        if text == "встань":
+            move = 1
+        elif text == "повернись":
+            move = 2
+        elif text == "проси":
+            move = 3
+        elif text == "станцуй":
+            move = 4
+        elif text == "потанцуй":
+            move = 5
+
+
+        
+
+
 
     response = {
         'version': event['version'],
@@ -41,12 +57,8 @@ def handler(event, context):
     utterance = event.get('request', {}).get('original_utterance')
     if logs_collection and utterance != 'None':
         logs_collection.insert_one({
-            'request': replace_dotted_keys(event),
-            'response': response,
             'time': datetime.datetime.now(),
-            'app_id': event['session'].get('application', {}).get('application_id'),
-            'utterance': utterance,
-            'response_text': response['response']['text'],
+            "move": move,
         })
     
     
