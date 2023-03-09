@@ -70,48 +70,45 @@ int main(int argc, char** argv)
             pub.publish(high_cmd_ros);
             usleep(30000000); // waiting 30s
             flag = 0;
-            high_cmd_ros.mode = 1; // force stand
-            pub.publish(high_cmd_ros);
-            usleep(2000000); // waiting 2s
-            high_cmd_ros.mode = 6; // position adjustment
-            pub.publish(high_cmd_ros);
-            usleep(1000000); // waiting 1s
+            //high_cmd_ros.mode = 6; // position adjustment
+            //pub.publish(high_cmd_ros);
+            //usleep(1000000); // waiting 1s
         }
         else if (flag == 1) {
-            high_cmd_ros.mode = 1; // stand
+            high_cmd_ros.mode = 0; // stand
             pub.publish(high_cmd_ros);
             usleep(2000000); // waiting 2s
             flag = 0;
-            high_cmd_ros.mode = 6; // position adjustment
-            pub.publish(high_cmd_ros);
-            usleep(1000000); // waiting 1s
+            //high_cmd_ros.mode = 6; // position adjustment
+            //pub.publish(high_cmd_ros);
+            //usleep(1000000); // waiting 1s
         }
         else if (flag == 2) {
             high_cmd_ros.mode = 10; // 90 degree rotation with a jump.
             pub.publish(high_cmd_ros);
             usleep(2000000); // waiting 2s
             flag = 0;
-            high_cmd_ros.mode = 6; // position adjustment
-            pub.publish(high_cmd_ros);
-            usleep(1000000); // waiting 1s
+            //high_cmd_ros.mode = 6; // position adjustment
+            //pub.publish(high_cmd_ros);
+            //usleep(1000000); // waiting 1s
         }
         else if (flag == 3) {
             high_cmd_ros.mode = 11; // asks
             pub.publish(high_cmd_ros);
             usleep(4000000); // waiting 4s
             flag = 0;
-            high_cmd_ros.mode = 6; // position adjustment
-            pub.publish(high_cmd_ros);
-            usleep(1000000); // waiting 1s
+            //high_cmd_ros.mode = 6; // position adjustment
+            //pub.publish(high_cmd_ros);
+            //usleep(1000000); // waiting 1s
         }
         else if (flag == 5) {
             high_cmd_ros.mode = 13; // dance 2
             pub.publish(high_cmd_ros);
             usleep(2000000); // waiting 2s
             flag = 0;
-            high_cmd_ros.mode = 6; // position adjustment
-            pub.publish(high_cmd_ros);
-            usleep(1000000); // waiting 1s
+            //high_cmd_ros.mode = 6; // position adjustment
+            //pub.publish(high_cmd_ros);
+            //usleep(1000000); // waiting 1s
         }
 
 

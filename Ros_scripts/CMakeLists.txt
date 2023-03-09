@@ -62,7 +62,7 @@ add_executable(twist_sub src/exe/twist_sub.cpp)
 target_link_libraries(twist_sub ${EXTRA_LIBS} ${catkin_LIBRARIES})
 add_dependencies(twist_sub ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-add_executable(dance src/exe/dance.cpp)
+add_executable(dance src/exe/voice_command.cpp)
 target_link_libraries(dance ${EXTRA_LIBS} ${catkin_LIBRARIES})
 add_dependencies(dance ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
