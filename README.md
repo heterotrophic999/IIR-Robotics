@@ -9,6 +9,7 @@ Vitalii Shevtsov
 Alyona Pozhidaeva
 
 We will create robot software and keep it here
+
 Для работы с собакой нужно установить:
 - 1)untree_legged_sdk
 - 2)unitree_ros
