@@ -68,8 +68,10 @@ int main(int argc, char** argv)
         if (flag == 4) {
             high_cmd_ros.mode = 12; // dance 1
             pub.publish(high_cmd_ros);
-            usleep(3000000); // waiting 3s
+            usleep(2000000); // waiting 2s
             flag = 0;
+            high_cmd_ros.mode = 0;
+            pub.publish(high_cmd_ros);
             //high_cmd_ros.mode = 6; // position adjustment
             //pub.publish(high_cmd_ros);
             //usleep(1000000); // waiting 1s
@@ -88,6 +90,8 @@ int main(int argc, char** argv)
             pub.publish(high_cmd_ros);
             usleep(2000000); // waiting 2s
             flag = 0;
+            high_cmd_ros.mode = 0;
+            pub.publish(high_cmd_ros);
             //high_cmd_ros.mode = 6; // position adjustment
             //pub.publish(high_cmd_ros);
             //usleep(1000000); // waiting 1s
@@ -97,6 +101,8 @@ int main(int argc, char** argv)
             pub.publish(high_cmd_ros);
             usleep(4000000); // waiting 4s
             flag = 0;
+            high_cmd_ros.mode = 0;
+            pub.publish(high_cmd_ros);
             //high_cmd_ros.mode = 6; // position adjustment
             //pub.publish(high_cmd_ros);
             //usleep(1000000); // waiting 1s
@@ -106,6 +112,8 @@ int main(int argc, char** argv)
             pub.publish(high_cmd_ros);
             usleep(2000000); // waiting 2s
             flag = 0;
+            high_cmd_ros.mode = 0;
+            pub.publish(high_cmd_ros);
             //high_cmd_ros.mode = 6; // position adjustment
             //pub.publish(high_cmd_ros);
             //usleep(1000000); // waiting 1s
