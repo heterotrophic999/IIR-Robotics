@@ -27,14 +27,19 @@ def handler(event, context):
             and len(event['request']['original_utterance']) > 0:
         text = event['request']['original_utterance']
         if text == "встань":
+            text = "Вуф"
             move = 1
         elif text == "повернись":
+            text = "Ваф"
             move = 2
         elif text == "проси":
+            text = "Ваф ваф"
             move = 3
         elif text == "станцуй":
+            text = "Ууууууу"
             move = 4
         elif text == "потанцуй":
+            text = "Вуф вуф"
             move = 5
 
 
