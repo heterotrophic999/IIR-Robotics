@@ -8,7 +8,6 @@ Vitalii Shevtsov
 
 Alyona Pozhidaeva
 
-We will create robot software and keep it here
 
 Для работы с собакой нужно установить:
 - 1)untree_legged_sdk
@@ -78,8 +77,8 @@ We will create robot software and keep it here
       -  6.6 Версию диалога выберите приватную
       -  6.7 Внизу страницы нажмите кнопку Сохранить/
  3) Запустите Навык:
-    1. ввы
-    2. выфвы
-    3. выфв
+    1. roslaunch IIR_legged_real real.launch ctrl_level:=highlevel
+    2. rosrun IIR_ros_Alisa Alisa_pub.py
+    3. rosrun IIR_legged_real voice_command
 
    
