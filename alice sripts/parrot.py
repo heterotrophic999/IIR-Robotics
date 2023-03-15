@@ -41,6 +41,8 @@ def handler(event, context):
         elif text == "потанцуй":
             text = "Вуф вуф"
             move = 5
+        else:
+            text = "Я не знаю такой команды"
 
 
         
