@@ -79,6 +79,6 @@ Alyona Pozhidaeva
  3) Запустите Навык:
     1. roslaunch IIR_legged_real real.launch ctrl_level:=highlevel
     2. rosrun IIR_ros_Alisa Alisa_pub.py
-    3. rosrun IIR_legged_real voice_command
+    3. rosrun IIR_legged_real voice_commands
 
    
