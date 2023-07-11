@@ -11,17 +11,7 @@ using namespace UNITREE_LEGGED_SDK;
 
 int flag = 0;
 void AlisaCallback(const std_msgs::UInt8 msg) {
-    int move = msg.data;
-    if (move == 1)
-        flag = 1;
-    else if (move == 2)
-        flag = 2;
-    else if (move == 3)
-        flag = 3;
-    else if (move == 4)
-        flag = 4;
-    else if (move == 5)
-        flag = 5;
+    flag = msg.data;
 }
 
 int main(int argc, char** argv)
@@ -72,29 +62,30 @@ int main(int argc, char** argv)
             flag = 0;
             high_cmd_ros.mode = 0;
             pub.publish(high_cmd_ros);
-            //high_cmd_ros.mode = 6; // position adjustment
-            //pub.publish(high_cmd_ros);
-            //usleep(1000000); // waiting 1s
         }
         else if (flag == 1) {
-            high_cmd_ros.mode = 0; // stand
+            high_cmd_ros.mode = 2; // right rotation.
+            high_cmd_ros.gaitType = 1;
+            high_cmd_ros.velocity[0] = 0; // -1  ~ +1
+            high_cmd_ros.bodyHeight = 0.01;
+            high_cmd_ros.yawSpeed = -0.6;
             pub.publish(high_cmd_ros);
-            usleep(2000000); // waiting 2s
+            // usleep(2000000); // waiting 2s
             flag = 0;
-            //high_cmd_ros.mode = 6; // position adjustment
-            //pub.publish(high_cmd_ros);
-            //usleep(1000000); // waiting 1s
+            // high_cmd_ros.mode = 0;
+            // pub.publish(high_cmd_ros);
         }
         else if (flag == 2) {
-            high_cmd_ros.mode = 10; // 90 degree rotation with a jump.
+            high_cmd_ros.mode = 2; // left rotation.
+            high_cmd_ros.gaitType = 1;
+            high_cmd_ros.velocity[0] = 0; // -1  ~ +1
+            high_cmd_ros.bodyHeight = 0.01;
+            high_cmd_ros.yawSpeed = 0.6;
             pub.publish(high_cmd_ros);
-            usleep(2000000); // waiting 2s
+            // usleep(2000000); // waiting 2s
             flag = 0;
-            high_cmd_ros.mode = 0;
-            pub.publish(high_cmd_ros);
-            //high_cmd_ros.mode = 6; // position adjustment
-            //pub.publish(high_cmd_ros);
-            //usleep(1000000); // waiting 1s
+            // high_cmd_ros.mode = 0;
+            // pub.publish(high_cmd_ros);
         }
         else if (flag == 3) {
             high_cmd_ros.mode = 11; // asks
@@ -103,23 +94,28 @@ int main(int argc, char** argv)
             flag = 0;
             high_cmd_ros.mode = 0;
             pub.publish(high_cmd_ros);
-            //high_cmd_ros.mode = 6; // position adjustment
-            //pub.publish(high_cmd_ros);
-            //usleep(1000000); // waiting 1s
         }
         else if (flag == 5) {
-            high_cmd_ros.mode = 13; // dance 2
+            high_cmd_ros.mode = 2;
+            high_cmd_ros.gaitType = 1;
+            high_cmd_ros.velocity[0] = 0.25f; // -1  ~ +1
+            high_cmd_ros.bodyHeight = 0.01;
             pub.publish(high_cmd_ros);
-            usleep(2000000); // waiting 2s
             flag = 0;
+        }
+        else if (flag == 6) {
+            high_cmd_ros.mode = 2;
+            high_cmd_ros.gaitType = 1;
+            high_cmd_ros.velocity[0] = -0.25f; // -1  ~ +1
+            high_cmd_ros.bodyHeight = 0.01;
+            pub.publish(high_cmd_ros);
+            flag = 0;
+        }
+        else if (flag == 7) {
             high_cmd_ros.mode = 0;
             pub.publish(high_cmd_ros);
-            //high_cmd_ros.mode = 6; // position adjustment
-            //pub.publish(high_cmd_ros);
-            //usleep(1000000); // waiting 1s
+            flag = 0;
         }
-
-
         ros::spinOnce();
         loop_rate.sleep(); // 2 ms delay
     }
