@@ -8,7 +8,6 @@ Vitalii Shevtsov
 
 Alyona Pozhidaeva
 
-We will create robot software and keep it here
 
 Для работы с собакой нужно установить:
 - 1)untree_legged_sdk
@@ -22,7 +21,7 @@ We will create robot software and keep it here
 1) Установка ROS пакетов:
   - 1. Выполните в папке catkin_ws/src git clone https://github.com/heterotrophic999/IIR-Robotics.git
   - 2. Выполните pip install для requirements.txt в папке alice scripts 
-  - 3. Используйте catkin make для Ros_Alisa и  
+  - 3. Используйте catkin make для IIR_ros_Alisa и IIR_legged_real 
   - 4. В пакете unitree_legged_real поменяйте ros_udp high_udp(8090, "192.168.12.1", 8082, sizeof(HighCmd),
   - 5. В .bashrc добавьте 
      #export ROS_HOSTNAME=localhost
@@ -78,8 +77,8 @@ We will create robot software and keep it here
       -  6.6 Версию диалога выберите приватную
       -  6.7 Внизу страницы нажмите кнопку Сохранить/
  3) Запустите Навык:
-    1. ввы
-    2. выфвы
-    3. выфв
+    1. roslaunch IIR_legged_real real.launch ctrl_level:=highlevel
+    2. rosrun IIR_ros_Alisa Alisa_pub.py
+    3. rosrun IIR_legged_real voice_commands
 
    

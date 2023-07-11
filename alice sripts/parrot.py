@@ -21,7 +21,7 @@ def handler(event, context):
     :return: response to be serialized as JSON.
     """
     move = 0
-    text = 'Hello! I\'ll repeat anything you say to me.'
+    text = ''
     if 'request' in event and \
             'original_utterance' in event['request'] \
             and len(event['request']['original_utterance']) > 0:
@@ -41,6 +41,8 @@ def handler(event, context):
         elif text == "потанцуй":
             text = "Вуф вуф"
             move = 5
+        else:
+            text = "Я не знаю такой команды"
 
 
         
