@@ -20,7 +20,7 @@ def get_responce(client):
   
 
 def talker():
-    MONGODB_URI = 'mongodb+srv://mrdanhik:0321@loser.2mlzec4.mongodb.net/alice?retryWrites=true&w=majority'
+    MONGODB_URI = ''
     client = pymongo.MongoClient(MONGODB_URI)  # тут должен быть ваш адрес mongo
     db = client.get_default_database()
     pub = rospy.Publisher('alice', UInt8, queue_size=10)
